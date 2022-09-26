@@ -9,7 +9,6 @@ public class Gerente extends Funcionario {
 @Override
     public float bonificacao(){
         float bonificado = super.bonificacao()+super.getSalario();
-        bonificado = (super.getSalario() + bonificado);
         return bonificado;
     }
 
