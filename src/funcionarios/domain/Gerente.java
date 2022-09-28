@@ -1,4 +1,4 @@
-package domain;
+package funcionarios.domain;
 
 public class Gerente extends Funcionario {
     private int senha;
@@ -8,7 +8,7 @@ public class Gerente extends Funcionario {
     }
 @Override
     public float bonificacao(){
-        float bonificado = super.bonificacao()+super.getSalario();
+        float bonificado = super.getSalario();
         return bonificado;
     }
 

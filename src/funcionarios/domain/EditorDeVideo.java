@@ -1,4 +1,4 @@
-package domain;
+package funcionarios.domain;
 
 public class EditorDeVideo extends Funcionario{
     public EditorDeVideo(String nome, String cfp, float salario) {

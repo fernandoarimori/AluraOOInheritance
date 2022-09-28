@@ -1,6 +1,6 @@
-package domain;
+package funcionarios.domain;
 
-public class Funcionario {
+public abstract class Funcionario {
     private String nome;
     private String cfp;
     private float salario;
@@ -11,10 +11,7 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public float bonificacao(){
-        float bonificado = this.salario*0.1f;
-        return bonificado;
-    }
+    public abstract float bonificacao();
 
     @Override
     public String toString() {

@@ -1,4 +1,4 @@
-package domain;
+package funcionarios.domain;
 
 public class ContreoleBoinificacao{
     private float somaS;
