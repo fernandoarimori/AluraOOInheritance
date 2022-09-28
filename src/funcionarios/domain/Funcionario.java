@@ -3,7 +3,7 @@ package funcionarios.domain;
 public abstract class Funcionario {
     private String nome;
     private String cfp;
-    private float salario;
+    protected float salario;
 
     public Funcionario(String nome, String cfp, float salario) {
         this.nome = nome;
@@ -42,7 +42,8 @@ public abstract class Funcionario {
         return salario;
     }
 
-    public void setSalario(float salario) {
+    public float setSalario(float salario) {
         this.salario = salario;
+        return salario;
     }
 }

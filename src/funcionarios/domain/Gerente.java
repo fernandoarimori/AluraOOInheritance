@@ -1,6 +1,7 @@
 package funcionarios.domain;
 
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario implements Autenticavel {
+
     private int senha;
 
     public Gerente(String nome, String cfp, float salario) {
@@ -17,13 +18,21 @@ public class Gerente extends Funcionario {
         this.senha = senha;
     }
 
+
+    @Override
     public boolean autentica(int senha) {
-//        if (senha == this.senha) {
-//            return true;
-//        }
-//        return false;
-        boolean x = senha == this.senha;
-        return x;
+        if (this.senha == senha) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
+    @Override
+    public void setSenha(int senha) {
+        this.senha = senha;
+
+    }
 }
+
+
