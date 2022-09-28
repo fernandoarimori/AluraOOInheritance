@@ -8,8 +8,8 @@ public class TesteContas {
 
         ContaPoupanca cp = new ContaPoupanca("C1","123123");
         ContaCorrente cc = new ContaCorrente("C2","123123");
-        cc.setSaldo(0d);
-        cp.setSaldo(0d);
+        cc.saldo= 0d;
+        cp.saldo = 0d;
         cc.depositar(1_000d);
         cp.depositar(500d);
         cc.transferencia(400d, cp);

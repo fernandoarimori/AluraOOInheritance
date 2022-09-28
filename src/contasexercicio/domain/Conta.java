@@ -1,12 +1,12 @@
 package contasexercicio.domain;
 
 
-public class Conta extends Cliente {
+public abstract class Conta extends Cliente {
 
 
-    private Integer agencia;
-    private Integer conta;
-    private Double saldo;
+   public Integer agencia;
+   public Integer conta;
+   public Double saldo;
 
     public Conta(String nome, String cpf) {
         super(nome, cpf);
@@ -23,11 +23,7 @@ public class Conta extends Cliente {
                 '}';
     }
 
-    public void depositar(Double valor) {
-        this.saldo = this.saldo + valor;
-
-    }
-
+    public abstract Double depositar(Double valor);
     public boolean sacar(double valor) {
         boolean x = this.saldo >= valor;
         this.saldo -= valor;
@@ -43,28 +39,4 @@ public class Conta extends Cliente {
         return false;
     }
 
-
-    public Integer getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(Integer agencia) {
-        this.agencia = agencia;
-    }
-
-    public Integer getConta() {
-        return conta;
-    }
-
-    public void setConta(Integer conta) {
-        this.conta = conta;
-    }
-
-    public Double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(Double saldo) {
-        this.saldo = saldo;
-    }
 }

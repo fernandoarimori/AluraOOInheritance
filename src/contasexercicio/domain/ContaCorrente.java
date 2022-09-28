@@ -8,13 +8,14 @@ public class ContaCorrente extends Conta{
     }
 
     @Override
-    public void depositar(Double valor) {
-        super.depositar(valor);
+    public Double depositar(Double valor) {
+        Double x = super.saldo+=valor;
+        return x;
     }
 
     @Override
     public boolean sacar(double valor) {
-        Double sacarValor = (super.getSaldo()-valor)+0.2d;
+        Double sacarValor = (super.saldo-valor)+0.2d;
         return super.sacar(sacarValor);
     }
 
@@ -28,34 +29,7 @@ public class ContaCorrente extends Conta{
         return super.toString();
     }
 
-    @Override
-    public Integer getAgencia() {
-        return super.getAgencia();
-    }
 
-    @Override
-    public void setAgencia(Integer agencia) {
-        super.setAgencia(agencia);
-    }
 
-    @Override
-    public Integer getConta() {
-        return super.getConta();
-    }
-
-    @Override
-    public void setConta(Integer conta) {
-        super.setConta(conta);
-    }
-
-    @Override
-    public Double getSaldo() {
-        return super.getSaldo();
-    }
-
-    @Override
-    public void setSaldo(Double saldo) {
-        super.setSaldo(saldo);
-    }
 }
 

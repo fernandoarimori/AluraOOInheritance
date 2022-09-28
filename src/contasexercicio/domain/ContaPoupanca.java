@@ -8,8 +8,8 @@ public class ContaPoupanca extends Conta{
     }
 
     @Override
-    public void depositar(Double valor) {
-        super.depositar(valor);
+    public Double depositar(Double valor) {
+        return super.saldo+=valor;
     }
 
     @Override
@@ -27,33 +27,4 @@ public class ContaPoupanca extends Conta{
         return super.toString();
     }
 
-    @Override
-    public Integer getAgencia() {
-        return super.getAgencia();
-    }
-
-    @Override
-    public void setAgencia(Integer agencia) {
-        super.setAgencia(agencia);
-    }
-
-    @Override
-    public Integer getConta() {
-        return super.getConta();
-    }
-
-    @Override
-    public void setConta(Integer conta) {
-        super.setConta(conta);
-    }
-
-    @Override
-    public Double getSaldo() {
-        return super.getSaldo();
-    }
-
-    @Override
-    public void setSaldo(Double saldo) {
-        super.setSaldo(saldo);
-    }
 }
