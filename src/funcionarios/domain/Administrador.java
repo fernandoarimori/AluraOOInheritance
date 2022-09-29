@@ -1,30 +1,21 @@
 package funcionarios.domain;
 
 public class Administrador extends Funcionario implements Autenticavel {
+    AutenticadorConcordancia autenticador;
 
-    public Administrador(String nome, String cfp, float salario, int senha) {
-        super(nome, cfp, salario);
-        this.senha = senha;
+    public Administrador() {
+        this.autenticador = new AutenticadorConcordancia();
     }
-
-    private int senha;
-
     @Override
     public float bonificacao() {
-        return this.setSalario(getSalario()+400f);
+        return this.setSalario(getSalario() + 400f);
     }
-
     @Override
     public void setSenha(int senha) {
-        this.senha = senha;
+        this.autenticador.setSenha(senha);
     }
-
     @Override
     public boolean autentica(int senha) {
-        if (this.senha == senha) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.autenticador.autentica(senha);
     }
 }

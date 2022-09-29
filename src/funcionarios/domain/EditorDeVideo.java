@@ -1,8 +1,8 @@
 package funcionarios.domain;
 
 public class EditorDeVideo extends Funcionario {
-    public EditorDeVideo(String nome, String cfp, float salario) {
-        super(nome, cfp, salario);
+    public EditorDeVideo() {
+
     }
 
     public float bonificacao() {

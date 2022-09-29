@@ -1,24 +1,30 @@
 package funcionarios.domain;
 
 public class SistemaInterno implements Autenticavel {
-    private int senha;
+    private AutenticadorConcordancia autenticador;
 
-    @Override
-    public void setSenha(int senha) {
-        this.senha = senha;
+    public SistemaInterno() {
+        this.autenticador = new AutenticadorConcordancia();
     }
 
-    @Override
+    public int getSenha(){
+        return autenticador.getSenha();
+    }
+
+
+    public void setSenha(int senha) {
+        autenticador.setSenha(senha);
+    }
+
+
+
+
     public boolean autentica(int senha) {
-        if (this.senha == senha) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.autenticador.autentica(senha);
     }
 
     public void autentica1(Autenticavel fa) {
-        boolean autenticol = fa.autentica(this.senha);
+        boolean autenticol = fa.autentica(this.autenticador.getSenha());
         if (autenticol) {
             System.out.println("Logged in");
         } else {

@@ -5,10 +5,7 @@ public abstract class Funcionario {
     private String cfp;
     protected float salario;
 
-    public Funcionario(String nome, String cfp, float salario) {
-        this.nome = nome;
-        this.cfp = cfp;
-        this.salario = salario;
+    public Funcionario() {
     }
 
     public abstract float bonificacao();

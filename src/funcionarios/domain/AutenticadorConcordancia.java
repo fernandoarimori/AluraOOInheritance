@@ -1,19 +1,17 @@
 package funcionarios.domain;
 
-public class Cliente implements Autenticavel {
-
-    public Cliente(){
-        AutenticadorConcordancia autenticador = new AutenticadorConcordancia();
-    }
-
+public class AutenticadorConcordancia {
     private int senha;
 
-    @Override
+    public int getSenha() {
+        return senha;
+    }
+
     public void setSenha(int senha) {
         this.senha = senha;
     }
 
-    @Override
+
     public boolean autentica(int senha) {
         if (this.senha == senha) {
             return true;
@@ -22,4 +20,3 @@ public class Cliente implements Autenticavel {
         }
     }
 }
-

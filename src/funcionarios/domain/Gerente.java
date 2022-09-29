@@ -1,37 +1,25 @@
 package funcionarios.domain;
 
 public class Gerente extends Funcionario implements Autenticavel {
+    private AutenticadorConcordancia autenticador;
 
-    private int senha;
-
-    public Gerente(String nome, String cfp, float salario) {
-        super(nome, cfp, salario);
+    public Gerente() {
+        this.autenticador = new AutenticadorConcordancia();
     }
-@Override
-    public float bonificacao(){
+    public int getSenha() {
+        return this.autenticador.getSenha();
+    }
+    @Override
+    public float bonificacao() {
         float bonificado = super.getSalario();
         return bonificado;
     }
-
-    public Gerente(String nome, String cfp, float salario, int senha) {
-        super(nome, cfp, salario);
-        this.senha = senha;
-    }
-
-
     @Override
     public boolean autentica(int senha) {
-        if (this.senha == senha) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.autenticador.autentica(senha);
     }
-
-    @Override
     public void setSenha(int senha) {
-        this.senha = senha;
-
+        this.autenticador.setSenha(getSenha());
     }
 }
 
