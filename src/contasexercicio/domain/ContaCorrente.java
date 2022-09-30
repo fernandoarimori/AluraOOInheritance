@@ -1,21 +1,32 @@
 package contasexercicio.domain;
 
-public class ContaCorrente extends Conta{
-
+public class ContaCorrente extends Conta implements ContadorDeImpostos,Transacoes {
+    private Contador contador;
 
     public ContaCorrente(String nome, String cpf) {
         super(nome, cpf);
+        this.contador = new Contador();
+    }
+
+    @Override
+    public void gatherTax() {
+        this.contador.setContadorSomaImpostos(this.contador.getContadorSomaImpostos() + super.saldo * 0.04d);
+    }
+
+    @Override
+    public Double minusTax() {
+        return super.saldo-= this.contador.getContadorSomaImpostos();
     }
 
     @Override
     public Double depositar(Double valor) {
-        Double x = super.saldo+=valor;
+        Double x = super.saldo += valor;
         return x;
     }
 
     @Override
     public boolean sacar(double valor) {
-        Double sacarValor = (super.saldo-valor)+0.2d;
+        Double sacarValor = (super.saldo - valor) + 0.2d;
         return super.sacar(sacarValor);
     }
 
@@ -29,7 +40,12 @@ public class ContaCorrente extends Conta{
         return super.toString();
     }
 
+    public Double getContadorSomaImpostos() {
+        return this.contador.getContadorSomaImpostos();
+    }
 
-
+    public void setContadorSomaImpostos(Double contadorSomaImpostos) {
+        this.contador.setContadorSomaImpostos(this.contador.getContadorSomaImpostos());
+    }
 }
 

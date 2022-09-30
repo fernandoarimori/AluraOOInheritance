@@ -1,7 +1,7 @@
 package contasexercicio.domain;
 
 
-public abstract class Conta extends Cliente {
+public abstract class Conta extends Cliente implements Transacoes {
 
 
    public Integer agencia;
@@ -17,6 +17,8 @@ public abstract class Conta extends Cliente {
     public String toString() {
         return "Conta{" +
                 '\'' +
+                "nome='" + super.getNome() +
+                ", cpf='" + super.getCpf()  +
                 ", agencia=" + this.agencia +
                 ", conta=" + this.conta +
                 ", saldo=" + this.saldo +
@@ -38,5 +40,7 @@ public abstract class Conta extends Cliente {
         }
         return false;
     }
+
+
 
 }

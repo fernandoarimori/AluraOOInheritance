@@ -1,10 +1,11 @@
 package contasexercicio.domain;
 
-public class ContaPoupanca extends Conta{
-
+public class ContaPoupanca extends Conta implements ContadorDeImpostos,Transacoes{
+public Contador contador;
 
     public ContaPoupanca(String nome, String cpf) {
         super(nome, cpf);
+        this.contador = new Contador();
     }
 
     @Override
@@ -27,4 +28,20 @@ public class ContaPoupanca extends Conta{
         return super.toString();
     }
 
+    @Override
+    public void gatherTax() {
+        this.contador.setContadorSomaImpostos(this.contador.getContadorSomaImpostos() + super.saldo * 0.02d);
+    }
+
+    @Override
+    public Double minusTax() {
+        return super.saldo-= this.contador.getContadorSomaImpostos();
+    }
+    public Double getContadorSomaImpostos() {
+        return this.contador.getContadorSomaImpostos();
+    }
+
+    public void setContadorSomaImpostos(Double contadorSomaImpostos) {
+        this.contador.setContadorSomaImpostos(this.contador.getContadorSomaImpostos());
+    }
 }
