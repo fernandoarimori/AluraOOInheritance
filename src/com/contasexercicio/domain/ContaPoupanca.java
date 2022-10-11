@@ -1,4 +1,4 @@
-package contasexercicio.domain;
+package com.contasexercicio.domain;
 
 public class ContaPoupanca extends Conta implements ContadorDeImpostos,Transacoes{
 public Contador contador;
@@ -6,16 +6,20 @@ public Contador contador;
     public ContaPoupanca(String nome, String cpf) {
         super(nome, cpf);
         this.contador = new Contador();
+        super.saldo = 0D;
     }
 
     @Override
     public Double depositar(Double valor) {
+        if (valor > 10_000D){
+            throw new UncheckedExClass("Valor muito alto para deposito");
+        }
         return super.saldo+=valor;
     }
 
     @Override
-    public boolean sacar(double valor) {
-        return super.sacar(valor);
+    public void sacar(double valor) throws CheckedExClass {
+        super.sacar(valor);
     }
 
     @Override

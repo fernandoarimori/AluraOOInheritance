@@ -1,4 +1,4 @@
-package contasexercicio.domain;
+package com.contasexercicio.domain;
 
 public interface ContadorDeImpostos {
      void gatherTax();

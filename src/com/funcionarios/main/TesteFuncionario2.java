@@ -1,9 +1,8 @@
-package funcionarios.main;
+package com.funcionarios.main;
 
-import funcionarios.domain.ContreoleBoinificacao;
-import funcionarios.domain.Designer;
-import funcionarios.domain.EditorDeVideo;
-import funcionarios.domain.Gerente;
+import com.funcionarios.domain.ContreoleBoinificacao;
+import com.funcionarios.domain.EditorDeVideo;
+import com.funcionarios.domain.Gerente;
 
 public class TesteFuncionario2 {
     public static void main(String[] args) {

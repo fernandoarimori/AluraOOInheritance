@@ -1,4 +1,4 @@
-package contasexercicio.domain;
+package com.contasexercicio.domain;
 
 public class Cliente {
     private String nome;

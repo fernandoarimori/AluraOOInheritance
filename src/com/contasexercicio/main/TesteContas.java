@@ -1,7 +1,8 @@
-package contasexercicio.main;
+package com.contasexercicio.main;
 
-import contasexercicio.domain.ContaCorrente;
-import contasexercicio.domain.ContaPoupanca;
+import com.contasexercicio.domain.CheckedExClass;
+import com.contasexercicio.domain.ContaCorrente;
+import com.contasexercicio.domain.ContaPoupanca;
 
 public class TesteContas {
     public static void main(String[] args) {
@@ -19,7 +20,11 @@ public class TesteContas {
         cc.transferencia(400d, cp);
         System.out.println(cc);
         System.out.println(cp);
-        cc.sacar(300d); //sacar tem taxa de 2% para conta corrente
+        try {
+            cc.sacar(3_000d); //sacar tem taxa de 2% para conta corrente
+        } catch (CheckedExClass e) {
+            e.printStackTrace();
+        }
         System.out.println("//////");
         System.out.println(cc);
         System.out.println(cp);

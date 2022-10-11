@@ -1,11 +1,12 @@
-package contasexercicio.domain;
+package com.contasexercicio.domain;
 
-public class ContaCorrente extends Conta implements ContadorDeImpostos,Transacoes {
+public class ContaCorrente extends Conta implements ContadorDeImpostos, Transacoes {
     private Contador contador;
 
     public ContaCorrente(String nome, String cpf) {
         super(nome, cpf);
         this.contador = new Contador();
+        super.saldo = 0D;
     }
 
     @Override
@@ -15,19 +16,23 @@ public class ContaCorrente extends Conta implements ContadorDeImpostos,Transacoe
 
     @Override
     public Double minusTax() {
-        return super.saldo-= this.contador.getContadorSomaImpostos();
+        return super.saldo -= this.contador.getContadorSomaImpostos();
     }
 
     @Override
     public Double depositar(Double valor) {
-        Double x = super.saldo += valor;
-        return x;
+        if (valor > 10_000D) {
+            throw new UncheckedExClass("Valor invalido para deposito");
+        } else {
+            return this.saldo += valor;
+        }
     }
 
     @Override
-    public boolean sacar(double valor) {
-        Double sacarValor = (super.saldo - valor) + 0.2d;
-        return super.sacar(sacarValor);
+    public void sacar(double valor) throws CheckedExClass { //checked Exception
+        if (this.saldo <= valor) {
+            throw new CheckedExClass("Valor insuficiente ");
+        }
     }
 
     @Override

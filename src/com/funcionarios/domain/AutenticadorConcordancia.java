@@ -1,4 +1,4 @@
-package funcionarios.domain;
+package com.funcionarios.domain;
 
 public class AutenticadorConcordancia {
     private int senha;

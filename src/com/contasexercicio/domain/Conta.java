@@ -1,15 +1,16 @@
-package contasexercicio.domain;
+package com.contasexercicio.domain;
 
 
 public abstract class Conta extends Cliente implements Transacoes {
 
 
-   public Integer agencia;
-   public Integer conta;
-   public Double saldo;
+    public Integer agencia;
+    public Integer conta;
+    public Double saldo;
 
     public Conta(String nome, String cpf) {
         super(nome, cpf);
+        this.saldo = 0D;
     }
 
 
@@ -18,7 +19,7 @@ public abstract class Conta extends Cliente implements Transacoes {
         return "Conta{" +
                 '\'' +
                 "nome='" + super.getNome() +
-                ", cpf='" + super.getCpf()  +
+                ", cpf='" + super.getCpf() +
                 ", agencia=" + this.agencia +
                 ", conta=" + this.conta +
                 ", saldo=" + this.saldo +
@@ -26,10 +27,11 @@ public abstract class Conta extends Cliente implements Transacoes {
     }
 
     public abstract Double depositar(Double valor);
-    public boolean sacar(double valor) {
-        boolean x = this.saldo >= valor;
-        this.saldo -= valor;
-        return x;
+
+    public void sacar(double valor) throws CheckedExClass { //checked Exception
+        if (this.saldo <= valor) {
+            throw new CheckedExClass("Valor insuficiente ");
+        }
     }
 
     public boolean transferencia(double valor, Conta destinatario) {
@@ -40,7 +42,6 @@ public abstract class Conta extends Cliente implements Transacoes {
         }
         return false;
     }
-
 
 
 }

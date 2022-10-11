@@ -1,7 +1,4 @@
-package funcionarios.main;
-
-import funcionarios.domain.Funcionario;
-import funcionarios.domain.Gerente;
+package com.funcionarios.main;
 
 public class TesteFuncionario01 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package funcionarios.domain;
+package com.funcionarios.domain;
 
 public class SistemaInterno implements Autenticavel {
     private AutenticadorConcordancia autenticador;

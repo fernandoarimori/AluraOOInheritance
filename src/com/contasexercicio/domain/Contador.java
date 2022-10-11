@@ -1,4 +1,4 @@
-package contasexercicio.domain;
+package com.contasexercicio.domain;
 
 public class Contador {
     private Double contadorSomaImpostos = 0d;

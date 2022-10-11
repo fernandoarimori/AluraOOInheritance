@@ -1,4 +1,4 @@
-package funcionarios.domain;
+package com.funcionarios.domain;
 
 public abstract class Funcionario {
     private String nome;

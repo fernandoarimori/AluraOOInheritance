@@ -1,7 +1,7 @@
-package funcionarios.main;
+package com.funcionarios.main;
 
 
-import funcionarios.domain.SistemaInterno;
+import com.funcionarios.domain.SistemaInterno;
 
 public class TesteSistema {
     public static void main(String[] args) {

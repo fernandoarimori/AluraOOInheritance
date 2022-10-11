@@ -1,4 +1,4 @@
-package funcionarios.domain;
+package com.funcionarios.domain;
 
 public class Gerente extends Funcionario implements Autenticavel {
     private AutenticadorConcordancia autenticador;
