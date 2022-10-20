@@ -3,11 +3,28 @@ package com.contasexercicio.domain;
 public class ContaPoupanca extends Conta implements ContadorDeImpostos,Transacoes{
 public Contador contador;
 
-    public ContaPoupanca(String nome, String cpf) {
-        super(nome, cpf);
+    public ContaPoupanca(String nome, String cpf,int agencia, int conta) {
+        super(nome, cpf, agencia, conta);
         this.contador = new Contador();
         super.saldo = 0D;
     }
+
+    public ContaPoupanca(String nome, String cpf) {
+        super(nome, cpf);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Conta ref = (Conta) obj;
+        if(this.agencia!=ref.agencia){
+            return false;
+        }
+        if (this.conta != ref.conta){
+            return false;
+        }
+        return true;
+    }
+
 
     @Override
     public Double depositar(Double valor) {

@@ -7,6 +7,11 @@ public class ClasseEspecial extends Conta {
         super(nome, cpf);
     }
 
+//    @Override
+//    public boolean equals(Conta obj) {
+//        return false;
+//    }
+
     @Override
     public Double depositar(Double valor) {
         return null;

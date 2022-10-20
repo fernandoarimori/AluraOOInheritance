@@ -1,6 +1,6 @@
 package com.contasexercicio.domain;
 
-public class Cliente {
+public abstract class Cliente {
     private String nome;
     private String cpf;
 
@@ -28,6 +28,7 @@ public class Cliente {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
 
 }
 

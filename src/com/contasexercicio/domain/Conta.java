@@ -4,13 +4,19 @@ package com.contasexercicio.domain;
 public abstract class Conta extends Cliente implements Transacoes {
 
 
-    public Integer agencia;
-    public Integer conta;
+    public int agencia;
+    public int conta;
     public Double saldo;
+
+    public Conta(String nome, String cpf,int agencia,int conta) {
+        super(nome, cpf);
+        this.saldo = 0D;
+        this.agencia = agencia;
+        this.conta = conta;
+    }
 
     public Conta(String nome, String cpf) {
         super(nome, cpf);
-        this.saldo = 0D;
     }
 
 
@@ -25,6 +31,8 @@ public abstract class Conta extends Cliente implements Transacoes {
                 ", saldo=" + this.saldo +
                 '}';
     }
+
+
 
     public abstract Double depositar(Double valor);
 
@@ -43,5 +51,16 @@ public abstract class Conta extends Cliente implements Transacoes {
         return false;
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        Conta ref = (Conta) obj;
+        if( this.agencia!= ref.agencia){
+            return false;
+        }
+        if  (this.conta !=  ref.conta){
+            return false;
+        }
+        return true;
+    }
 }
+

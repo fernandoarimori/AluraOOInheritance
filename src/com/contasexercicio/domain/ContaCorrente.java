@@ -3,10 +3,28 @@ package com.contasexercicio.domain;
 public class ContaCorrente extends Conta implements ContadorDeImpostos, Transacoes {
     private Contador contador;
 
-    public ContaCorrente(String nome, String cpf) {
-        super(nome, cpf);
+    public ContaCorrente(String nome, String cpf,int agencia, int conta) {
+        super(nome, cpf, agencia, conta);
         this.contador = new Contador();
         super.saldo = 0D;
+    }
+
+    public ContaCorrente(String nome, String cpf) {
+        super(nome, cpf);
+    }
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        Conta ref = (Conta) obj;
+        if(this.agencia!=ref.agencia){
+            return false;
+        }
+        if (this.conta != ref.conta){
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -45,6 +63,7 @@ public class ContaCorrente extends Conta implements ContadorDeImpostos, Transaco
         return super.toString();
     }
 
+
     public Double getContadorSomaImpostos() {
         return this.contador.getContadorSomaImpostos();
     }
@@ -52,5 +71,8 @@ public class ContaCorrente extends Conta implements ContadorDeImpostos, Transaco
     public void setContadorSomaImpostos(Double contadorSomaImpostos) {
         this.contador.setContadorSomaImpostos(this.contador.getContadorSomaImpostos());
     }
+
+
+
 }
 
