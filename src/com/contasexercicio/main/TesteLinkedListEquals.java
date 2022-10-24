@@ -21,7 +21,7 @@ public class TesteLinkedListEquals {
         System.out.println(isThereObj);
         Conta ccAbs1 = listaConta.get(1);
         System.out.println(ccAbs1);
-        boolean isTheSame = cc1.equals(cp1);
+        boolean isTheSame = cc1.equals(cp2);
         System.out.println(isTheSame);
         System.out.println(listaConta);
 //        for (Conta lista: listaConta

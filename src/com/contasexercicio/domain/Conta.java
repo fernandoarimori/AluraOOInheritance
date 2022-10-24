@@ -1,7 +1,7 @@
 package com.contasexercicio.domain;
 
 
-public abstract class Conta extends Cliente implements Transacoes {
+public abstract class Conta extends Cliente implements Transacoes,Comparable<Conta> {
 
 
     public int agencia;
@@ -61,6 +61,13 @@ public abstract class Conta extends Cliente implements Transacoes {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public int compareTo(Conta o) {
+        String x = super.getCpf();
+        String y = o.getCpf();
+        return x.compareTo(y);
     }
 }
 

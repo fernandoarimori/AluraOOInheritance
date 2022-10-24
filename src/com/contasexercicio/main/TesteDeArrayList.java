@@ -6,14 +6,19 @@ import com.contasexercicio.domain.ContaCorrente;
 import com.contasexercicio.domain.ContaPoupanca;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Vector;
 
 public class TesteDeArrayList {
     public static void main(String[] args) {
         //Adicionando generics
         ArrayList<Conta> lista = new ArrayList();
-        ContaCorrente cc1 = new ContaCorrente("CC1","xxxxx");
-        ContaCorrente cc2 = new ContaCorrente("CC2","xxxx2");
-        ContaCorrente cc3 = new ContaCorrente("CC3","xxxx3");
+//        List<Conta> lista = new Vector<Conta>();
+//        Collection<Conta> lista = new Vector<Conta>();
+        ContaCorrente cc1 = new ContaCorrente("CC1", "xxxxx");
+        ContaCorrente cc2 = new ContaCorrente("CC2", "xxxx2");
+        ContaCorrente cc3 = new ContaCorrente("CC3", "xxxx3");
         ContaPoupanca cp1 = new ContaPoupanca("CP1", "yyyyyy");
         ContaPoupanca cp2 = new ContaPoupanca("CP2", "yyyy2");
         ContaPoupanca cp3 = new ContaPoupanca("CP3", "yyyy3");
@@ -32,7 +37,7 @@ public class TesteDeArrayList {
         System.out.println(ref);
         System.out.println(lista.size());
         System.out.println("==-=-=-=-=-=-=-");
-        for (Conta elemento:lista) {
+        for (Conta elemento : lista) {
             System.out.println(elemento);
         }
         System.out.println("---------");
