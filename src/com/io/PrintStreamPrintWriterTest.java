@@ -5,7 +5,7 @@ import java.io.*;
 public class PrintStreamPrintWriterTest {
     public static void main(String[] args) throws IOException {
         long ini = System.currentTimeMillis();
-        PrintStream ps= new PrintStream("lorem_copy.txt");
+        PrintStream ps= new PrintStream("lorem_copy.txt", "UTF-8");
         ps.println("Testando 123");
         //ps.newLine();
         ps.print(System.lineSeparator());
@@ -17,9 +17,9 @@ public class PrintStreamPrintWriterTest {
 
         System.out.println("----------");
 
-        PrintWriter pw= new PrintWriter("lorem_copy.txt");
+        PrintWriter pw= new PrintWriter("lorem_copy.txt", "UTF-8");
         pw.println("qweqweqwewq");
-        pw.print("sqweq");
+        pw.print("sqweqãé");
         long fim = System.currentTimeMillis();
         pw.print("Passaram: "+ (fim-ini));
         pw.close();
